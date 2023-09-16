@@ -19,7 +19,7 @@ public class PersonsController {
     @Autowired
     private PersonServices personServices;
 
-    @PostMapping()
+    @PostMapping("/sign-up")
     public ResponseEntity<CreatePersonResponse> createPersonEndpoint(@RequestBody CreatePersonRequest createPersonRequest){
      CreatePersonResponse personResponse =  personServices.createPerson(createPersonRequest);
     return   ResponseEntity.status(HttpStatus.CREATED).body(personResponse);
